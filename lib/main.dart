@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-void main(){
+import 'package:my_portfolio/pages/Homepage.dart';
+void main() {
   runApp(myapp());
 }
+
 class myapp extends StatelessWidget {
   const myapp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "hridoy",
-      home: ,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      title: "Hridoy",
+      home: Homepage(),
     );
   }
 }
