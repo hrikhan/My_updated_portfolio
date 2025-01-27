@@ -3,10 +3,12 @@ import 'package:flutter/rendering.dart';
 import 'package:my_portfolio/componants/header_button.dart';
 import 'package:my_portfolio/constant/colors.dart';
 import 'package:my_portfolio/style/header_decoration.dart';
+import 'package:my_portfolio/widgeds/laptop_body_part.dart';
 import 'package:my_portfolio/widgeds/drawe.dart';
 import 'package:my_portfolio/widgeds/header_desktop.dart';
 import 'package:my_portfolio/widgeds/header_mobile.dart';
 import 'package:my_portfolio/widgeds/name_of_portfolio.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -23,7 +25,7 @@ class _HomepageState extends State<Homepage> {
       return Scaffold(
         key: scaffoldkey,
         backgroundColor: Colors.blueGrey,
-        endDrawer:Constraints.maxWidth >= 600?null: Drawe(),
+        endDrawer: Constraints.maxWidth >= 600 ? null : Drawe(),
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
@@ -35,76 +37,65 @@ class _HomepageState extends State<Homepage> {
                   scaffoldkey.currentState?.openEndDrawer();
                 },
               ),
-            //progect
+            //body
+            //BodyPart(),
             Container(
-              padding: EdgeInsets.only(left: 40,right: 40),
-              height: 500,
-              decoration:const BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Colors.black,
-                  Colors.purple,
-                  
-                ]),
-                borderRadius: BorderRadius.only(topLeft:Radius.circular(20),topRight:Radius.circular(20))
-              ),
+              padding: EdgeInsets.only(left: 60),
+              height: MediaQuery.of(context).size.height * 0.8,
+              decoration: BoxDecoration(
+                  gradient:
+                      LinearGradient(colors: [Colors.black, Colors.purple]),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20))),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(25.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Hey,",
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontSize: 30,
-                              ),
-                            ),
-                            Text(
-                              "I am a Flutter developer ",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 35),
-                            ),
-                            Text(
-                              "lets Explore my contibution ",
-                              style:
-                                  TextStyle(color: Colors.purple, fontSize: 25),
-                            ),
-                            SizedBox(height: 20),
-                            Row(
-                              children: [
-                                ElevatedButton(
-                                    onPressed: () {}, child: Text("whatsapp")),
-                                ElevatedButton(
-                                    onPressed: () {}, child: Text("LinkedIn"))
-                              ],
-                            )
-                          ],
+                  //image
+                  Container(
+                    height: 300,
+                    width: 150.w,
+                    decoration: const BoxDecoration(
+                        color: Colors.white, shape: BoxShape.circle),
+                    child: Container(
+                      height: 120.h,
+                      width: 120.w,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 5,
+                          
+                          color: Colors.white),
+                        shape: BoxShape.circle,
+                        image: const DecorationImage(
+                          image: AssetImage("assets/IMG_9133.JPG"),
+                          fit: BoxFit.contain,
                         ),
-                        Spacer(),
-                        Container(
-                          padding: EdgeInsets.only(right: 50),
-                          height: 300,
-                          width: ,
-                          decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(400)),
-                          ),
-                          child: ClipRRect(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(200)),
-                              child: Image.asset('assets/IMG_9133.JPG',
-                                  fit: BoxFit.contain)),
-                        )
-                      ],
+                      ),
                     ),
                   ),
+                   Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Hey,",
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 30,
+                      ),
+                    ),
+                    const Text(
+                      "I am a Flutter developer ",
+                      style: TextStyle(color: Colors.white, fontSize: 35),
+                    ),
+                    const Text(
+                      "lets Build your application",
+                        style: TextStyle(color: Colors.purple, fontSize: 25),
+                    ),
+                 ] )
+
+//
                 ],
               ),
             ),
