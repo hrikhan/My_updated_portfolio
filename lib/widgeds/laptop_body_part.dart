@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,7 +10,7 @@ class BodyPart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: 40, right: 40),
-      height: 500,
+      height: 400,
       decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
             Colors.black,
@@ -36,11 +37,13 @@ class BodyPart extends StatelessWidget {
                         fontSize: 30,
                       ),
                     ),
-                    const Text(
-                      "I am a Flutter developer ",
-                      style: TextStyle(color: Colors.white, fontSize: 35),
+                    DefaultTextStyle(
+                      style: TextStyle(color: Colors.white,fontSize: 30),
+                      child: AnimatedTextKit(
+                      
+                        animatedTexts: [TypewriterAnimatedText('I am Flutter developer',speed: const Duration(milliseconds: 100),)]),
                     ),
-                    const Text(
+                       const Text(
                       "lets Build your application",
                       style: TextStyle(color: Colors.purple, fontSize: 25),
                     ),

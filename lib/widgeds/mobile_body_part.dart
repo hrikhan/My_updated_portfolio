@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,7 +9,7 @@ class MobileBodyPart extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
               padding: EdgeInsets.only(left: 20),
-              height: MediaQuery.of(context).size.height * 0.9,
+              height: MediaQuery.of(context).size.height * 0.8,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   gradient:
@@ -48,7 +49,7 @@ class MobileBodyPart extends StatelessWidget {
                       ),
                    SizedBox
                    (
-                    height: 240,
+                    height: 190,
 
                      child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -61,11 +62,13 @@ class MobileBodyPart extends StatelessWidget {
                                   fontSize: 30,
                                 ),
                               ),
-                           Text(
-                                "I am a\nFlutter developer ",
-                                style:
-                                    TextStyle(color: Colors.white, fontSize: 30),
-                              ),
+                               DefaultTextStyle(
+                      style: TextStyle(color: Colors.white,fontSize: 25),
+                      child: AnimatedTextKit(
+                      
+                        animatedTexts: [TypewriterAnimatedText('I am Flutter developer',speed: const Duration(milliseconds: 100),)]),
+                    ),
+                         
                         Text(
                                 "lets Build your application",
                                 style:
