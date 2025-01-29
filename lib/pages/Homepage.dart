@@ -3,17 +3,18 @@ import 'package:flutter/rendering.dart';
 import 'package:my_portfolio/componants/project.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/widgeds/desktop_contact.dart';
 
 import 'package:my_portfolio/widgeds/drawe.dart';
 import 'package:my_portfolio/widgeds/header_desktop.dart';
 import 'package:my_portfolio/widgeds/header_mobile.dart';
 import 'package:my_portfolio/widgeds/laptop_body_part.dart';
 import 'package:my_portfolio/widgeds/mobile_body_part.dart';
+import 'package:my_portfolio/widgeds/mobile_contact.dart';
 import 'package:my_portfolio/widgeds/mobile_skills.dart';
 import 'package:my_portfolio/widgeds/project.dart';
 
 import '../widgeds/desktop_skills.dart';
-
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -50,7 +51,6 @@ class _HomepageState extends State<Homepage> {
               const MobileBodyPart(),
             //tittle of skills
             Container(
-            
               padding: EdgeInsets.all(20),
               height: 80,
               decoration: BoxDecoration(
@@ -68,61 +68,63 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
 
-            if(Constraints.maxWidth >= 600) 
-            DesktopSkills()
+            if (Constraints.maxWidth >= 600)
+              DesktopSkills()
             else
-            
-             MobileSkills(),
+              MobileSkills(),
 
-          //  project
-         Container(
-            height: 80,
-           child: const   Center(
+            //  project
+            Container(
+              height: 80,
+              child: const Center(
                 child: Text(
                   'My Projects',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
-         ),
+            ),
             //project
-         
 
-         
-         
-          
-             Project(),
-           SizedBox(
+            Project(),
+            SizedBox(
               height: 20,
-           ),
-           //contact
-           Container(
-            height: 80,
-            child: const   Center(
-                  child: Text(
-                    'Contact Me',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                ),
-           ),
+            ),
             //contact
             Container(
-              height: 20,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.purple, Colors.pink, Colors.purple],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+              height: 50,
+              child: const Center(
+                child: Text(
+                  'Contact Me',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                
               ),
             ),
-               //fotter
+            //contact
+            Column(
+              children: [
+                if (Constraints.maxWidth >= 600)
+                  DesktopContact()
+                else
+                  MobileContact(),
+                ElevatedButton(onPressed: () {}, child: Text('submit'))
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            //fotter
             Container(
               height: 100,
-              color: Colors.brown,
-              child: 
-              //fotter,
-           const   Center(
+              decoration: BoxDecoration(
+                color: Colors.brown,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
+              child:
+                  //fotter,
+                  const Center(
                 child: Text(
                   'created by Hridoy\n             2025',
                   style: TextStyle(color: Colors.white, fontSize: 10),

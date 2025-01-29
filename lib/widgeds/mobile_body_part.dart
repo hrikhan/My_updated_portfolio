@@ -80,7 +80,9 @@ class MobileBodyPart extends StatelessWidget {
                                     WidgetStatePropertyAll(Colors.teal),
                                 foregroundColor:
                                     WidgetStatePropertyAll(Colors.white)),
-                          onPressed:(){},
+                          onPressed:(){
+                            
+                          },
                             child: Text("whatsapp")),
                             ]),
                    ),
