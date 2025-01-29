@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:my_portfolio/componants/header_button.dart';
-import 'package:my_portfolio/componants/myitems.dart';
-import 'package:my_portfolio/constant/colors.dart';
-import 'package:my_portfolio/style/header_decoration.dart';
-import 'package:my_portfolio/widgeds/desktop_skills.dart';
-import 'package:my_portfolio/widgeds/laptop_body_part.dart';
+import 'package:my_portfolio/componants/project.dart';
+import 'package:my_portfolio/main.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:my_portfolio/widgeds/drawe.dart';
 import 'package:my_portfolio/widgeds/header_desktop.dart';
 import 'package:my_portfolio/widgeds/header_mobile.dart';
+import 'package:my_portfolio/widgeds/laptop_body_part.dart';
 import 'package:my_portfolio/widgeds/mobile_body_part.dart';
 import 'package:my_portfolio/widgeds/mobile_skills.dart';
-import 'package:my_portfolio/widgeds/name_of_portfolio.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/widgeds/project.dart';
+
+import '../widgeds/desktop_skills.dart';
+
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -67,20 +68,64 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
 
-             // DesktopSkills(),
+            if(Constraints.maxWidth >= 600) 
+            DesktopSkills()
+            else
+            
              MobileSkills(),
 
-            
-             //fotter
+          //  project
+         Container(
+            height: 80,
+           child: const   Center(
+                child: Text(
+                  'My Projects',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ),
+         ),
+            //project
+         
+
+         
+         
+          
+             Project(),
+           SizedBox(
+              height: 20,
+           ),
+           //contact
+           Container(
+            height: 80,
+            child: const   Center(
+                  child: Text(
+                    'Contact Me',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+           ),
+            //contact
             Container(
-              height: 500,
+              height: 20,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.purple, Colors.pink, Colors.purple],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                
+              ),
+            ),
+               //fotter
+            Container(
+              height: 100,
               color: Colors.brown,
               child: 
               //fotter,
-              Center(
+           const   Center(
                 child: Text(
-                  'This is my portfolio',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                  'created by Hridoy\n             2025',
+                  style: TextStyle(color: Colors.white, fontSize: 10),
                 ),
               ),
             ),

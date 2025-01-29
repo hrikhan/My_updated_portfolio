@@ -8,10 +8,10 @@ class MobileBodyPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-              padding: EdgeInsets.only(left: 20),
+              padding:const EdgeInsets.only(left: 20),
               height: MediaQuery.of(context).size.height * 0.8,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
+              decoration:const BoxDecoration(
                   gradient:
                       LinearGradient(colors: [Colors.black, Colors.purple]),
                   borderRadius: BorderRadius.only(
@@ -69,13 +69,13 @@ class MobileBodyPart extends StatelessWidget {
                         animatedTexts: [TypewriterAnimatedText('I am Flutter developer',speed: const Duration(milliseconds: 100),)]),
                     ),
                          
-                        Text(
+                    const    Text(
                                 "lets Build your application",
                                 style:
                                     TextStyle(color: Colors.purple, fontSize: 20),
                               ),
                              ElevatedButton(
-                            style: ButtonStyle(
+                            style:const ButtonStyle(
                                 backgroundColor:
                                     WidgetStatePropertyAll(Colors.teal),
                                 foregroundColor:

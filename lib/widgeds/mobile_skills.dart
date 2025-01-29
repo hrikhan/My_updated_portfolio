@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/componants/myitems.dart';
+import 'package:my_portfolio/main.dart';
 
 class MobileSkills extends StatelessWidget {
 MobileSkills({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
     return 
             Stack(
               children: [
                 Container(
                   padding: EdgeInsets.all(60),
-                  height: 400,
+                  height: 550,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [Colors.black, Colors.purple],
@@ -26,7 +28,8 @@ MobileSkills({super.key});
                           
                 ),
                 Positioned(
-                  top: 10,
+                  top: 13,
+              left: (screenWidth - 300) / 2,
                   
                   child:    Container(
                     padding: EdgeInsets.all(20),
@@ -87,12 +90,12 @@ MobileSkills({super.key});
               
             ),
             Positioned(
-  top: 300,
-  left: 10,
+  top: 320,
+  left: screenWidth * 0.15,
    // Responsive left position
   child: ConstrainedBox(
     constraints: BoxConstraints(
-      maxWidth: MediaQuery.of(context).size.width * 0.3, // Responsive width
+      maxWidth: MediaQuery.of(context).size.width * 0.7, // Responsive width
     ),
     child: Wrap(
       alignment: WrapAlignment.center, // Centers the Chips
