@@ -17,81 +17,77 @@ class MobileBodyPart extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20))),
-              child: Row(
+              child: 
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  //image
+                  Row(
                     children: [
-                      //image
-                      Row(
-                        children: [
-                          Container(
-                            height: 200,
-                            width: 150.w,
-                            decoration: const BoxDecoration(
-                                color: Colors.white, shape: BoxShape.circle),
-                            child: Container(
-                              height: 120.h,
-                              width: 120.w,
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(width: 5, color: Colors.white),
-                                shape: BoxShape.circle,
-                                image: const DecorationImage(
-                                  image: AssetImage("assets/IMG_9133.JPG"),
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
+                      Container(
+                        height: 200.h,
+                        width: 150.w,
+                        decoration: const BoxDecoration(
+                            color: Colors.white, shape: BoxShape.circle),
+                        child: Container(
+                          height: 120.h,
+                          width: 130.w,
+                          decoration: BoxDecoration(
+                            border:
+                                Border.all(width: 5, color: Colors.white),
+                            shape: BoxShape.circle,
+                            image: const DecorationImage(
+                              image: AssetImage("assets/IMG_9133.JPG"),
+                              fit: BoxFit.contain,
                             ),
                           ),
-                        ],
+                        ),
                       ),
-                   SizedBox
-                   (
-                    height: 190,
-
-                     child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                           Text(
-                                "Hey,",
-                                style: TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 30,
-                                ),
-                              ),
-                               DefaultTextStyle(
-                      style: TextStyle(color: Colors.white,fontSize: 25),
-                      child: AnimatedTextKit(
-                      
-                        animatedTexts: [TypewriterAnimatedText('I am Flutter developer',speed: const Duration(milliseconds: 100),)]),
-                    ),
-                         
-                    const    Text(
-                                "lets Build your application",
-                                style:
-                                    TextStyle(color: Colors.purple, fontSize: 20),
-                              ),
-                             ElevatedButton(
-                            style:const ButtonStyle(
-                                backgroundColor:
-                                    WidgetStatePropertyAll(Colors.teal),
-                                foregroundColor:
-                                    WidgetStatePropertyAll(Colors.white)),
-                          onPressed:(){
-                            
-                          },
-                            child: Text("whatsapp")),
-                            ]),
-                   ),
-
-                      //button
-                      
                     ],
                   ),
-                 
+               SizedBox
+               (
+                height: 190,
+              
+                 child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                       Text(
+                            "Hey,",
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 30,
+                            ),
+                          ),
+                           DefaultTextStyle(
+                  style: TextStyle(color: Colors.white,fontSize: 25),
+                  child: AnimatedTextKit(
+                  
+                    animatedTexts: [TypewriterAnimatedText('I am Flutter developer',speed: const Duration(milliseconds: 100),)]),
+                ),
+                     
+                const    Text(
+                            "lets Build your application",
+                            style:
+                                TextStyle(color: Colors.purple, fontSize: 20),
+                          ),
+                         ElevatedButton(
+                        style:const ButtonStyle(
+                            backgroundColor:
+                                WidgetStatePropertyAll(Colors.teal),
+                            foregroundColor:
+                                WidgetStatePropertyAll(Colors.white)),
+                      onPressed:(){
+              
+                      },
+                        child: Text("whatsapp")),
+                        ]),
+               ),
+              
+                  //button
+                  
                 ],
               ),
             );
